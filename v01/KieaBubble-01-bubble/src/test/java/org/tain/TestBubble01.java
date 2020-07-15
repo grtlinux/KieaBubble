@@ -10,7 +10,7 @@ import java.io.FileWriter;
 public class TestBubble01 {
 
 	public static void main(String[] args) {
-		//args = new String[] {"up", "/Users/kangmac/jar.tgz", "/Users/kangmac/_bubble.txt"};
+		args = new String[] {"up", "/Users/kangmac/jar.tgz", "/Users/kangmac/_bubble.json"};
 		//args = new String[] {"down", "/Users/kangmac/_bubble.txt", "/Users/kangmac/_jar.tgz"};
 
 		if (args.length != 3) {
@@ -77,11 +77,20 @@ public class TestBubble01 {
 			String strWrite = null;
 			int nRead = -1;
 			int step = 0;
+			writer.write("{");
+			writer.write("\"project\":\"Lightnet Transfer\",");
+			writer.write("\"descriptor\":\"Transfer Data\",");
+			writer.write("\"date\":\"2020-07-15 08:34:23\",");
+			writer.write("\"data\":[");
 			while ((nRead = fis.read(byteRead)) != -1) {
 				System.out.println("Bubble UP >>>>> wirte step: " + (++step));
 				strWrite = byteArrayToHexString(byteRead, nRead);
+				writer.write("\"");
 				writer.write(strWrite);
+				writer.write("\",");
 			}
+			writer.write("]");
+			writer.write("}");
 			writer.flush();
 			System.out.println("Bubble UP >>>>> Finish ");
 		} catch (Exception e) {
