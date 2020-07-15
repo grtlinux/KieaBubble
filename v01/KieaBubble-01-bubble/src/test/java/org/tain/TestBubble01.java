@@ -10,8 +10,8 @@ import java.io.FileWriter;
 public class TestBubble01 {
 
 	public static void main(String[] args) {
-		args = new String[] {"up", "/Users/kangmac/jar.tgz", "/Users/kangmac/_bubble.json"};
-		//args = new String[] {"down", "/Users/kangmac/_bubble.txt", "/Users/kangmac/_jar.tgz"};
+		//args = new String[] {"up", "/Users/kangmac/jar.tgz", "/Users/kangmac/_bubble.json"};
+		//args = new String[] {"down", "/Users/kangmac/_bubble.json", "/Users/kangmac/_jar.tgz"};
 
 		if (args.length != 3) {
 			printUsage();

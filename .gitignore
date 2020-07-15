@@ -24,5 +24,6 @@ hs_err_pid*
 
 
 # -------------------------- written by Kiea 2020.07.14
+.DS_Store
 /bin
 /logs
